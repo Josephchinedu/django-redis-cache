@@ -60,7 +60,7 @@ loadtest -n 100 -k  http://localhost:8000/store/
 
 
 when cache is use
-```bash
+```python
 from django.core.cache import cache
 from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
@@ -82,5 +82,10 @@ def view_cached_books(request):
         return Response(results, status=status.HTTP_201_CREATED)
 
 
+```
+
+test the view that has cache feature
+```bash
+sudo loadtest -n 100 -k  http://localhost:8000/store/cache/
 ```
 
